@@ -1,0 +1,16 @@
+version: "3"
+services:
+    scribe:
+        image: ubuntu:bionic
+        restart: always
+        ports:
+            - 8800:8800
+        volumes:
+            - ./start-scribed.sh:/root/start-scribed.sh
+            - ./scribecore:/root/.scribecore # Map the Path to your host, so you don't loose any important files.
+        command:
+            ['/root/start-scribed.sh']
+        logging:
+            driver: "json-file"
+            options:
+                max-size: "10m"
