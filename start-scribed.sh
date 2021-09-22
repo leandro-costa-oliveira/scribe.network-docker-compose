@@ -13,7 +13,7 @@ git clone https://github.com/scribenetwork/sentinel.git
 cd sentinel
 virtualenv ./venv
 ./venv/bin/pip install -r requirements.txt
-echo "* * * * * cd /root/sentinel && ./venv/bin/python bin/sentinel.py >/dev/null 2>&1 >" > /var/spool/cron/crontabs/root
+echo "* * * * * cd /root/sentinel && ./venv/bin/python bin/sentinel.py >/dev/null 2>&1" > /var/spool/cron/crontabs/root
 cron 
 
 # test the configuration
